@@ -1,0 +1,52 @@
+{
+  "name": "wifi-passwords",
+  "version": "0.0.1",
+  "description": "Retrieve saved WiFi passwords across Linux, Windows, and macOS systems.",
+  "type": "module",
+  "bin": {
+    "wifikeys": "./dist/bin.js"
+  },
+  "author": "FADHILI Josue <fadhilijosue27@gmail.com>",
+  "files": [
+    "./dist/bin.js"
+  ],
+  "scripts": {
+    "build": "esbuild --bundle src/bin.ts --platform=node --outfile=dist/bin.js --packages=external --format=esm --minify",
+    "dev": "run-p dev:*",
+    "dev:tsc": "tsc --watch --preserveWatchOutput",
+    "dev:node": "node --watch dist/bin.js",
+    "dev:esbuild": "pnpm run build --watch",
+    "test": "vitest run",
+    "lint": "tsc && xo --fix",
+    "format": "prettier --write ./src/**/*.ts",
+    "ci": "pnpm run build",
+    "release": "pnpm run ci && changeset publish",
+    "local-link": "pnpm build && pnpm unlink --global | true && pnpm run build && pnpm link --global"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FADHILI-Josue/wifikeys.git"
+  },
+  "packageManager": "pnpm@8.14.3",
+  "bugs": {
+    "url": "https://github.com/FADHILI-Josue/wifikeys/issues"
+  },
+  "homepage": "https://github.com/FADHILI-Josue/wifikeys#readme",
+  "keywords": ["wifi", "wifi keys", "wifi password", "password"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "esbuild": "^0.20.2",
+    "execa": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5",
+    "xo": "^0.58.0"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.1",
+    "commander": "^12.0.0",
+    "consola": "^3.2.3",
+    "ora": "^8.0.1"
+  }
+}
