@@ -1,5 +1,5 @@
 {
-  "name": "wifi-passwords",
+  "name": "wifikeys",
   "version": "0.0.1",
   "description": "Retrieve saved WiFi passwords across Linux, Windows, and macOS systems.",
   "type": "module",
