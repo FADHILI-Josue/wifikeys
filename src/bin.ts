@@ -11,7 +11,11 @@ program
   .name('wifikeys')
   .description('get wifi keys(passwords) CLI')
   .usage('command [arguments]')
-  .version(`\u001B[1mv${pkg.version}\u001B[0m`, '-v, --version', "Output wifikeys's current version.")
+  .version(
+    `\u001B[1mv${pkg.version}\u001B[0m`,
+    '-v, --version',
+    "Output wifikeys's current version.",
+  )
   .helpOption('-h, --help', 'Output usage of wifikeys.');
 
 program
@@ -21,10 +25,13 @@ program
   .action(async (ssid: string, options) => {
     try {
       if (options?.networks?.length) {
-        for (const ssid of options.networks as string[]) {
+        const promises = (options.networks as string[]).map(async (ssid) => {
           const password: string = await getWifiPassword(ssid);
           console.log(`> ${ssid}: ${password} \n`);
-        }
+        });
+
+        // Wait for all promises to resolve
+        await Promise.all(promises);
         process.exit(0);
       }
 

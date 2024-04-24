@@ -4,17 +4,17 @@ import win from './win';
 import linux from './linux';
 
 export default async (ssid?: string) => {
-	let function_: typeof osx | typeof linux | typeof win;
+  let function_: typeof osx | typeof linux | typeof win;
 
-	if (process.platform === 'darwin') {
-		function_ = osx;
-	}
+  if (process.platform === 'darwin') {
+    function_ = osx;
+  }
 
-	function_ = process.platform === 'win32' ? win : linux;
+  function_ = process.platform === 'win32' ? win : linux;
 
-	if (ssid) {
-		return function_(ssid);
-	}
+  if (ssid) {
+    return function_(ssid);
+  }
 
-	return getWifiName().then(function_);
+  return getWifiName().then(function_);
 };
