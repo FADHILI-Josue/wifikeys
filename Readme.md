@@ -31,7 +31,7 @@ To get the password for a specific Wi-Fi network, use the get command followed b
 
 ```bash
 wifikeys get <ssid>
-# eg: wifikeys get RCA-WiFii"
+# eg: wifikeys get RCA-WiFii
 ```
 <!-- NOTE: provide image example -->
 
