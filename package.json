@@ -6,6 +6,7 @@
   "bin": {
     "wifikeys": "./dist/bin.js"
   },
+  "files": ["dis/bin.js"],
   "author": "FADHILI Josue <fadhilijosue27@gmail.com>",
   "scripts": {
     "build": "esbuild --bundle src/bin.ts --platform=node --outfile=dist/bin.js --packages=external --format=esm --minify",
