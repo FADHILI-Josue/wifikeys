@@ -17,6 +17,9 @@ importers:
       consola:
         specifier: ^3.2.3
         version: 3.2.3
+      execa:
+        specifier: ^8.0.1
+        version: 8.0.1
       ora:
         specifier: ^8.0.1
         version: 8.0.1
@@ -27,9 +30,6 @@ importers:
       esbuild:
         specifier: ^0.20.2
         version: 0.20.2
-      execa:
-        specifier: ^8.0.1
-        version: 8.0.1
       npm-run-all:
         specifier: ^4.1.5
         version: 4.1.5
