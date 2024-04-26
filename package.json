@@ -19,6 +19,7 @@
     "format": "prettier --write ./src/**/*.ts",
     "ci": "pnpm run build",
     "release": "pnpm run ci && changeset publish",
+    "unlink-cli": "pnpm unlink --global",
     "local-link": "pnpm build && pnpm unlink --global | true && pnpm run build && pnpm link --global"
   },
   "repository": {
