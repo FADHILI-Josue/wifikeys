@@ -1,4 +1,6 @@
-#!/usr/bin/env node
+// #!/usr/bin/env node
+
+import {exec} from 'node:child_process'
 
 import {Command} from 'commander';
 import consola from 'consola';

@@ -1,4 +1,4 @@
-import {execa} from 'execa';
+import { exec } from 'child_process';
 import ora from 'ora';
 
 const spinner = ora('Loading wifi password(key)');
@@ -8,18 +8,32 @@ export default async (ssid: string) => {
   const cmd = 'sudo';
   const arguments_ = ['cat', `/etc/NetworkManager/system-connections/${ssid}`];
 
-  return execa(cmd, arguments_).then(({stdout}) => {
-    let returnValue;
+  return new Promise<string>((resolve, reject) => {
+    exec(`${cmd} ${arguments_.join(' ')}`, (error, stdout, stderr) => {
+      if (error) {
+        spinner.fail('Error when retrieving password');
+        reject(new Error(`Error when retrieving password: ${error.message}`));
+        return;
+      }
 
-    returnValue = /^\s*(?:psk|password)=(.+)\s*$/gm.exec(stdout);
-    returnValue = returnValue && returnValue.length > 0 ? returnValue[1] : null;
+      if (stderr) {
+        spinner.fail(stderr);
+        reject(new Error(stderr));
+        return;
+      }
 
-    if (!returnValue) {
-      spinner.fail('Could not get password');
-      throw new Error('Could not get password');
-    }
+      let returnValue;
+      returnValue = /^\s*(?:psk|password)=(.+)\s*$/gm.exec(stdout);
+      returnValue = returnValue && returnValue.length > 0 ? returnValue[1] : null;
 
-    spinner.succeed(`Password for ${ssid} successfully retrieved`);
-    return returnValue;
+      if (!returnValue) {
+        spinner.fail('Could not get password');
+        reject(new Error('Could not get password'));
+        return;
+      }
+
+      spinner.succeed(`Password for ${ssid} successfully retrieved`);
+      resolve(returnValue);
+    });
   });
 };
