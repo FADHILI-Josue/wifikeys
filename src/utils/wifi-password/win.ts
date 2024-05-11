@@ -10,7 +10,7 @@ export default async (ssid: string): Promise<string> => {
   spinner.start();
 
   return new Promise<string>((resolve, reject) => {
-    exec(`${cmd} ${arguments_.join(' ')}`, (error, stdout, stderr) => {
+    exec(`${cmd} ${arguments_.join(' ')}`, (error, stdout) => {
       if (error) {
         spinner.fail('Could not get password');
         reject(new Error(`Could not get password: ${error.message}`));

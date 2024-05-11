@@ -38,8 +38,7 @@ program
       process.exit(0);
     } catch (error) {
       consola.error(
-        error,
-        `Error when getting password : ${error}`,
+        `Error when getting password!! check if you have password for wifi saved`,
       );
       process.exit(0);
     }
