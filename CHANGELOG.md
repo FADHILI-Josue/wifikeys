@@ -1,5 +1,11 @@
 # wifikeys
 
+## 0.0.6
+
+### Patch Changes
+
+- 57f1c29: fix shebang issue
+
 ## 0.0.4
 
 ### Patch Changes
