@@ -2,6 +2,7 @@ import {Command} from 'commander';
 import consola from 'consola';
 import pkg from '../package.json';
 import getWifiPassword from './utils/wifi-password';
+import { error } from 'console';
 
 export const program = new Command();
 
@@ -35,9 +36,9 @@ program
 
       await getWifiPassword(ssid).then(console.log);
       process.exit(0);
-    } catch {
+    } catch (error) {
       consola.error(
-        'failed to get password!! check if the you have saved password for wifi network',
+        `Error when getting password : ${error}`,
       );
       process.exit(0);
     }

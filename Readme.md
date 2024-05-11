@@ -1,7 +1,7 @@
 # wifikeys
 
 ![npm](https://img.shields.io/npm/v/wifikeys)
-![License](https://img.shields.io/github/license/FADHILI-Josue/wifikeys)
+![License](https://img.shields.io/github/license/FADHILI-Josue/wifikeys/)
 
 **wifikeys** is a command-line interface (CLI) tool for retrieving Wi-Fi passwords on your system. It allows you to easily retrieve passwords for saved Wi-Fi networks.
 
