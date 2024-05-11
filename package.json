@@ -29,7 +29,7 @@
     "type": "git",
     "url": "git+https://github.com/FADHILI-Josue/wifikeys.git"
   },
-  "packageManager": "pnpm@9.01.0",
+  "packageManager": "pnpm@9.1.0",
   "bugs": {
     "url": "https://github.com/FADHILI-Josue/wifikeys/issues"
   },
