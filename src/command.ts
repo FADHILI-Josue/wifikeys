@@ -38,6 +38,7 @@ program
       process.exit(0);
     } catch (error) {
       consola.error(
+        error,
         `Error when getting password : ${error}`,
       );
       process.exit(0);
