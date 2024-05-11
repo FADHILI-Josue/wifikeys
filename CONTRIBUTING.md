@@ -101,5 +101,6 @@ Bear in mind this when altering and/or extending the sources.
 
 # Important
 
+- make sure you used pnpm v9.1.0 if you added or removed deps
 - Please make sure that you run tests before making a PR.
 - please make sure you make a changeset before making a PR.
