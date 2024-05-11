@@ -1,5 +1,11 @@
 # wifikeys
 
+## 0.0.7
+
+### Patch Changes
+
+- 409ac79: changing the logging mechanism
+
 ## 0.0.6
 
 ### Patch Changes
