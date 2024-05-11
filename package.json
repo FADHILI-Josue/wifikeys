@@ -4,6 +4,7 @@
   "description": "Retrieve saved WiFi passwords across Linux, Windows, and macOS systems.",
   "type": "module",
   "private": false,
+  "main": "./dist/bin.js",
   "bin": {
     "wifikeys": "./dist/bin.js"
   },
@@ -12,7 +13,7 @@
   ],
   "author": "FADHILI Josue <fadhilijosue27@gmail.com>",
   "scripts": {
-    "build": "echo #!/usr/bin/env node >> dist/bin.js && esbuild --bundle src/bin.ts --platform=node --outfile=dist/bin.js --packages=external --format=esm",
+    "build": "esbuild --bundle src/bin.ts --platform=node --outfile=dist/bin.js --packages=external --format=esm",
     "dev": "run-p dev:*",
     "dev:tsc": "tsc --watch --preserveWatchOutput",
     "dev:node": "node --watch dist/bin.js",
