@@ -60,3 +60,6 @@ Contributions are welcome! If you find any issues or have suggestions for improv
 [![Star on GitHub](https://img.shields.io/github/stars/FADHILI-Josue/wifikeys.svg?style=social)](https://github.com/FADHILI-Josue/wifikeys/stargazers)
 [![Follow on Twitter](https://img.shields.io/twitter/follow/FADHILIJosue?style=social)](https://twitter.com/FADHILIJosue)
 [![Connect on LinkedIn](https://img.shields.io/badge/connect-linkedin-blue)](https://www.linkedin.com/in/fadhili-josue/)
+
+> [!IMPORTANT]
+> Working with linux and mac os, has got some issues to be fixed. It's currently available for windows only!
