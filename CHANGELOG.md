@@ -1,5 +1,11 @@
 # wifikeys
 
+## 0.0.8
+
+### Patch Changes
+
+- d1d1a63: update loggin system
+
 ## 0.0.7
 
 ### Patch Changes
